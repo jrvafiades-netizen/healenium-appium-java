@@ -32,14 +32,14 @@ public class TestEmulatorWebPage {
     }
 
     @Test
-    public void testXpathAnd() {
-        String mainPageUrl = "https://elenastepuro.github.io/test_env/index.html";
+    public void testSpotifyWebPage() {
+        String mainPageUrl = "https://open.spotify.com";
 
         appiumDriver.get(mainPageUrl);
 
-        appiumDriver.findElement(By.xpath("//*[@id='change:name']"));
-        appiumDriver.findElement(By.xpath("//*[@id='Submit']")).click();
-        appiumDriver.findElement(By.xpath("//*[@id='change:name']"));
+        appiumDriver.findElement(By.xpath("//button[contains(@class, 'ButtonInline-button')]"));
+        appiumDriver.findElement(By.xpath("//a[contains(@href, '/login')]")).click();
+        appiumDriver.findElement(By.xpath("//input[@type='email']"));
     }
 
     @AfterAll

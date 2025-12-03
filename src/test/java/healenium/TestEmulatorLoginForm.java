@@ -26,14 +26,14 @@ public class TestEmulatorLoginForm {
 
     private static AppiumDriver appiumDriver;
 
-    private static String byXpath = "//android.widget.Button[@text = 'SIGN IN OR REGISTER']";
+    private static String byXpath = "//android.widget.Button[@text = 'LOG IN']";
 
     @SneakyThrows
     @BeforeAll
     public static void setUp() {
         UiAutomator2Options options = new UiAutomator2Options()
-                .setAppPackage("com.example.healenium_appium_example_login")
-                .setAppActivity(".ui.login.LoginActivity")
+                .setAppPackage("com.spotify.music")
+                .setAppActivity(".MainActivity")
                 .setDeviceName("emulator-5554");
 
         String nodeURL = "http://localhost:8085";
@@ -43,18 +43,18 @@ public class TestEmulatorLoginForm {
 
 
     @Test
-    public void testFindElementsOk2() throws DataMuseException, InterruptedException {
-        String randomWord = "RandomWord";
+    public void testSpotifyLoginForm() throws DataMuseException, InterruptedException {
+        String email = "test@example.com";
 
-        WebElement username = appiumDriver.findElement(By.id("username"));
-        WebElement login = appiumDriver.findElement(By.xpath(byXpath));
+        WebElement emailField = appiumDriver.findElement(By.id("email"));
+        WebElement loginButton = appiumDriver.findElement(By.xpath(byXpath));
 
-        username.sendKeys(randomWord);
+        emailField.sendKeys(email);
 
-        WebElement healedLogin = appiumDriver.findElement(By.xpath(byXpath));
-        healedLogin.click();
+        WebElement healedLoginButton = appiumDriver.findElement(By.xpath(byXpath));
+        healedLoginButton.click();
 
-        assertEquals(randomWord.toUpperCase(Locale.ROOT), healedLogin.getText());
+        assertEquals("LOG IN", healedLoginButton.getText());
     }
 
     @AfterAll
