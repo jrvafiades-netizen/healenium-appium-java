@@ -1,9 +1,5 @@
 package healenium;
 
-import com.github.dhiraj072.randomwordgenerator.RandomWordGenerator;
-import com.github.dhiraj072.randomwordgenerator.datamuse.DataMuseRequest;
-import com.github.dhiraj072.randomwordgenerator.datamuse.WordsRequest;
-import com.github.dhiraj072.randomwordgenerator.exceptions.DataMuseException;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import lombok.SneakyThrows;
@@ -43,7 +39,7 @@ public class TestEmulatorLoginForm {
 
 
     @Test
-    public void testSpotifyLoginForm() throws DataMuseException, InterruptedException {
+    public void testSpotifyLoginForm() throws InterruptedException {
         String email = "test@example.com";
 
         WebElement emailField = appiumDriver.findElement(By.id("email"));
