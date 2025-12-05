@@ -14,14 +14,13 @@
 
 
 ### Overall information
-Healenium-Appium example demos java project to test both web app and native apps using Appium.
+Healenium-Appium example demonstrates a Java project to test the Plymouth Rock Assurance Android mobile app using Appium and Healenium for self-healing test automation.
 
 ### Compatibility with OSs
 
-Support: Android Web, Android native app, IOS Web.
+Support: Android native app testing (Plymouth Rock Assurance).
 
-> Unfortunately, Healenium-Appium doesn't support IOS native apps at present.
-> But we plan to release to support IOS apps in the near future.
+> This project is specifically designed to test the Plymouth Rock Assurance Android mobile application.
 
 ### Prerequisites
 
@@ -40,27 +39,27 @@ Ensure you have Java 21 LTS installed:
 java -version
 ```
 
-Clone Healenium repository:
-```sh
-git clone https://github.com/healenium/healenium.git
-```
+Install the Plymouth Rock Assurance app on your Android emulator.
 
-> Before running healenium you have to specify appium server host and port using appropriate environment variables of hlm-proxy container: APPIUM_SERVER_URL
-
-Example setup hlm-proxy's env variables in case of local Appium server (specified by default):
-
-```dockerfile
-    - APPIUM_SERVER_URL=http://host.docker.internal:4723/wd/hub
-```
-
-Run Healenium with Appium only
+The app package name is: `com.plymouthrock.mobile`
 
 ```sh
-docker-compose -f healenium/docker-compose-appium.yaml up -d
+git clone https://github.com/jrvafiades-netizen/healenium-appium-java.git
+cd healenium-appium-java
 ```
 
-Run example tests
+#### Running Tests Locally
 
+1. Start Appium Server:
+```sh
+appium
+```
+
+2. Start your Android emulator with the Plymouth Rock Assurance app installed
+
+3. Run the tests:
 ```sh
 mvn clean test
 ```
+
+The tests will interact with the Plymouth Rock Assurance app's login form and navigation elements.
