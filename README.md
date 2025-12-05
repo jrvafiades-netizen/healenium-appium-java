@@ -20,22 +20,32 @@ Healenium-Appium example demos java project to test both web app and native apps
 
 Support: Android Web, Android native app, IOS Web.
 
-NOT Support: IOS native app.
-
 > Unfortunately, Healenium-Appium doesn't support IOS native apps at present.
 > But we plan to release to support IOS apps in the near future.
 
+### Prerequisites
+
+- **Java 21 LTS** (or higher)
+- Maven 3.9.x or higher
+- Appium Server 2.x
+
+This project has been upgraded to Java 21 LTS and requires Java 21 or higher to build and run.
+
 
 ### Healenium-Appium installation
+
+#### Prerequisites
+Ensure you have Java 21 LTS installed:
+```sh
+java -version
+```
 
 Clone Healenium repository:
 ```sh
 git clone https://github.com/healenium/healenium.git
 ```
 
-Setup appium server and device. And install our android app: /resource/apps/login-form.apk
-
-> Before run healenium you have to specify appium server host and port using appropriate environment variables of hlm-proxy container: APPIUM_SERVER_URL
+> Before running healenium you have to specify appium server host and port using appropriate environment variables of hlm-proxy container: APPIUM_SERVER_URL
 
 Example setup hlm-proxy's env variables in case of local Appium server (specified by default):
 
@@ -54,9 +64,3 @@ Run example tests
 ```sh
 mvn clean test
 ```
-
-## Community / Support
-
-* [Telegram chat](https://t.me/healenium)
-* [GitHub Issues](https://github.com/healenium/healenium/issues)
-* [YouTube Channel](https://www.youtube.com/channel/UCsZJ0ri-Hp7IA1A6Fgi4Hvg)
